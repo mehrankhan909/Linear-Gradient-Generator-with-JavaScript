@@ -6,9 +6,9 @@
     <title>Gradient Generator</title>
     <style>
         div{
-            margin: 100px auto 20px auto;
-            width: 200px;
-            height: 200px;
+            margin: 0 auto 20px auto;
+            width: 480px;
+            height: 480px;
             /* border: 1px solid #333; */
             transition: all 0.3s ease;
             border-radius: 50%;
@@ -54,7 +54,7 @@
         })
             btn.addEventListener("click", ()=>{
             let answer = "";
-            for(let i = 0; i < 4; i++){
+            for(let i = 0; i < 6; i++){
                 let random = Math.floor(Math.random() * 10);
                 answer += random;
                 console.log(answer);
