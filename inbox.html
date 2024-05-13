@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <style>
+        div{
+            margin: 100px auto 20px auto;
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid #333; */
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+        button{
+            display: block;
+            padding: 10px 40px;
+            margin: 0 auto;
+            cursor: pointer;
+            border: none;
+            user-select: none;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>Color Hex number: <span></span></p>
+    <button>Random</button>
+    <script>
+        let box = document.querySelector("div");
+        let btn = document.querySelector("button");
+        let span = document.querySelector("span")
+        btn.addEventListener("click", ()=>{
+            let answer = "";
+            let answer2 = "";
+            for(let i = 0; i < 6; i++){
+                let random = Math.floor(Math.random() * 10);
+                let random2 = Math.floor(Math.random() * 10);
+                answer += random;
+                answer2 += random2;
+                console.log(answer);
+                box.style.background = "linear-gradient(to right, " 
+                 + `#${answer}`
+                 + ", " 
+                 + `#${answer2}` 
+                 + ")";
+            }
+            span.innerHTML = `#${answer}`;
+            span.innerHTML += ` and #${answer2}`
+        })
+            btn.addEventListener("click", ()=>{
+            let answer = "";
+            for(let i = 0; i < 4; i++){
+                let random = Math.floor(Math.random() * 10);
+                answer += random;
+                console.log(answer);
+                btn.style.background = `#${answer}`;
+            }
+        })
+        btn.addEventListener("click", ()=>{
+            let answer = "";
+            for(let i = 0; i < 6; i++){
+                let random = Math.floor(Math.random() * 10);
+                answer += random;
+                console.log(answer);
+                btn.style.color = `#${answer}`;
+            }
+        })
+    </script>
+</body>
+</html>
